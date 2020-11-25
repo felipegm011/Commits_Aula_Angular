@@ -12,11 +12,18 @@ import { CadastroServiceService } from 'src/app/services/cadastro-service.servic
 })
 export class FormComponent{
 
-  constructor(private cadastroservice: CadastroServiceService, private router: Router) { }
+  cadastro: Cadastro = new Cadastro();  
 
+  constructor(private cadastroservice: CadastroServiceService, private router: Router) { }
+  
   addCadastro(cadastro: Cadastro) {
     this.cadastroservice.addCadastro(cadastro)
       .subscribe(() => { this.router.navigateByUrl('/'); },);
+  }
+  
+  onSubmit() {
+    this.addCadastro(this.cadastro);
+    console.log(this.cadastro);  
   }
 
 }

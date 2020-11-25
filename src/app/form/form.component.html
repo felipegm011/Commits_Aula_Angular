@@ -1,25 +1,27 @@
+
 <form #f="ngForm">
     <div class="form-group">
       <label for="exampleInputEmail1">Nome</label>
-      <input type="text" class="form-control" id="nome"  aria-describedby="emailHelp" placeholder="Enter name" ngModel="cadastro.nome" required>
+      <input type="text" class="form-control" id="cadastro.nome" placeholder="Enter name" [(ngModel)]="cadastro.nome" [ngModelOptions]="{standalone: true}" required>
     </div>
+    <!--
     <div class="form-group">
       <label for="exampleInputPassword1">CURSO</label>
-      <input type="text" class="form-control" id="curso" placeholder="Enter curso" ngModel="cadastro.curso"required>
+      <input type="text" class="form-control" id="cadastro.curso" placeholder="Enter curso" [(ngModel)]="cadastro.curso" [ngModelOptions]="{standalone: true}" required>
     </div>
     <div class="form-group">
         <label for="exampleInputPassword1">DATA</label>
-        <input  type="date" class="form-control" id="data" placeholder="Enter data" ngModel="cadastro.data" required>
+        <input  type="date" class="form-control" id="cadastro.data" placeholder="Enter data" [(ngModel)]="cadastro.data" [ngModelOptions]="{standalone: true}" required>
     </div>
     <div class="form-group">
         <label for="exampleInputPassword1">MATRICULA</label>
-        <input  type="text" class="form-control" id="matricula" placeholder="Enter matricula" ngModel="cadastro.matricula" required>
+        <input  type="text" class="form-control" id="cadastro.matricula" placeholder="Enter matricula" [(ngModel)]="cadastro.matricula" [ngModelOptions]="{standalone: true}" required>
     </div>
     <div class="form-group">
         <label for="exampleInputPassword1">ASSUNTO</label>
-        <input  type="text" class="form-control" id="assunto" placeholder="Enter assunto" ngModel="cadastro.assunto" required>
-    </div>
+        <input  type="text" class="form-control" id="cadastro.assunto" placeholder="Enter assunto" [(ngModel)]="cadastro.assunto" [ngModelOptions]="{standalone: true}" required>
+    </div> -->
 
 
-    <button type="submit" class="btn btn-primary" [disabled]="f.form.invalid"> Submit</button>
+    <button (click) = "onSubmit()" type="submit" class="btn btn-primary" [disabled]="f.form.invalid"> Submit</button>
   </form>
